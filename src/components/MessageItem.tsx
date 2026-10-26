@@ -1,5 +1,6 @@
 import { Message } from "../api";
 import ReportCard from "./ReportCard";
+import Markdown from "./Markdown";
 
 export default function MessageItem({ message }: { message: Message }) {
   // User question → right side
@@ -30,11 +31,11 @@ export default function MessageItem({ message }: { message: Message }) {
     );
   }
 
-  // Assistant text (chat / clarify) → left side
+  // Assistant text (chat / clarify) → left side, rendered as markdown + math
   return (
     <div className="flex justify-start">
-      <div className="max-w-[80%] rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700">
-        {message.content}
+      <div className="max-w-[80%] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+        <Markdown text={message.content} />
       </div>
     </div>
   );
