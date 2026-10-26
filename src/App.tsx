@@ -204,7 +204,7 @@ function App() {
                   <MessageItem key={m.id} message={m} />
                 ))}
                 {sending && (
-                  <div className="text-sm text-slate-400">Generating report…</div>
+                  <div className="text-sm text-slate-400">Working…</div>
                 )}
                 <div ref={endRef} />
               </div>
