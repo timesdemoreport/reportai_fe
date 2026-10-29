@@ -19,7 +19,6 @@ import {
 import { ReportData } from "../api";
 import { exportExcel, exportPdf } from "../exportReport";
 
-const COLORS = ["#2563eb", "#60a5fa", "#3b82f6", "#93c5fd", "#1d4ed8", "#bfdbfe"];
 // Distinct multi-hue palette for pie slices (bars stay on the blue theme).
 const PIE_COLORS = [
   "#2563eb",
