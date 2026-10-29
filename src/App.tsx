@@ -13,10 +13,10 @@ import MessageItem from "./components/MessageItem";
 import Composer from "./components/Composer";
 
 const QUICK_STARTS = [
-  "Headcount by department 2025",
   "Turnover by department, 2024 vs 2025",
   "Retention rate by department 2025",
   "Leave utilization by department 2025",
+  "What if we give Sales a 10% raise?",
 ];
 
 function App() {
@@ -127,11 +127,9 @@ function App() {
             </button>
             <div className="flex items-center gap-2">
               <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold">
-                P
+                F
               </div>
-              <span className="text-sm font-medium">
-                People <span className="text-white/50">/ insight</span>
-              </span>
+              <span className="text-sm font-medium">Foresight</span>
             </div>
           </div>
           <span className="rounded-full border border-white/20 px-3 py-1 text-[11px] tracking-wide text-white/70">

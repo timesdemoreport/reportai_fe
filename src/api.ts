@@ -18,6 +18,7 @@ export interface ReportData {
   chart_type?: string;
   title?: string;
   unit?: string;
+  badge?: string;
   y_label?: string;
   period_label?: string;
   compare_label?: string;

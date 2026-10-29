@@ -20,6 +20,17 @@ import { ReportData } from "../api";
 import { exportExcel, exportPdf } from "../exportReport";
 
 const COLORS = ["#2563eb", "#60a5fa", "#3b82f6", "#93c5fd", "#1d4ed8", "#bfdbfe"];
+// Distinct multi-hue palette for pie slices (bars stay on the blue theme).
+const PIE_COLORS = [
+  "#2563eb",
+  "#10b981",
+  "#f59e0b",
+  "#ef4444",
+  "#8b5cf6",
+  "#ec4899",
+  "#14b8a6",
+  "#f97316",
+];
 
 function Chart({ data }: { data: ReportData }) {
   const series = data.series || [];
@@ -51,7 +62,7 @@ function Chart({ data }: { data: ReportData }) {
         <Legend />
         <Pie data={series} dataKey="value" nameKey="label" outerRadius={90} label>
           {series.map((s, i) => (
-            <Cell key={i} fill={s.highlight ? "#1d4ed8" : COLORS[i % COLORS.length]} />
+            <Cell key={i} fill={PIE_COLORS[i % PIE_COLORS.length]} />
           ))}
         </Pie>
       </PieChart>
@@ -132,7 +143,7 @@ export default function ReportCard({ data }: { data: ReportData }) {
           <div className="mb-3 flex items-center justify-between">
             <span className="text-sm font-medium text-slate-700">Workforce visualisation</span>
             <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-blue-600">
-              Sample data
+              {data.badge || "Sample data"}
             </span>
           </div>
 
